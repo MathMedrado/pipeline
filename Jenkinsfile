@@ -14,7 +14,7 @@ pipeline {
         } 
         stage("Listando os arquivos"){
             steps{
-                sh 'ls -la'
+                sh 'docker ps -la'
             }   
         } 
     }
