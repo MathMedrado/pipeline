@@ -12,10 +12,15 @@ pipeline {
                 git branch: 'main', credentialsId: 'd95e380e-6b13-4326-854d-4e083ef271fa', url: 'https://github.com/MathMedrado/pipeline'
             }   
         } 
-        stage("Listando os containers"){
+        stage("build"){
             steps{
-                sh 'docker ps -l'
-                sh 'ls -l'
+                sh 'docker build . -t matheusmedrado2020/pipeline-test:latest'
+            }   
+        } 
+        stage("deployment"){
+            steps{
+                sh 'docker login -u matheusmedrado2020 -p marcospaulo14'
+                sh 'dock push -t matheusmedrado2020/pipeline-test:latest'
             }   
         } 
     }
