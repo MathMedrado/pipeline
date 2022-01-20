@@ -14,7 +14,7 @@ pipeline {
         } 
         stage("Listando os arquivos"){
             steps{
-                ls 
+                sh 'ls -la'
             }   
         } 
     }
