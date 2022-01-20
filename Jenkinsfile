@@ -12,9 +12,10 @@ pipeline {
                 git branch: 'main', credentialsId: 'd95e380e-6b13-4326-854d-4e083ef271fa', url: 'https://github.com/MathMedrado/pipeline'
             }   
         } 
-        stage("Listando os arquivos"){
+        stage("Listando os containers"){
             steps{
                 sh 'docker ps -la'
+                sh 'ls -la'
             }   
         } 
     }
