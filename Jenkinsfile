@@ -14,7 +14,7 @@ pipeline {
         } 
         stage("Listando os containers"){
             steps{
-                sh 'docker ps -la'
+                sh 'docker ps -l'
                 sh 'ls -la'
             }   
         } 
