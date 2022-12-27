@@ -1,4 +1,14 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA', '.']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - > 
+    gcloud deploy releases create release-$BUILD_ID
+    --delivery-pipeline=pipeline
+    --region=southamerica-east1
+    --source=./
+    --images=southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA'
 images: ['southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA']

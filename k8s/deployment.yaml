@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-app
+spec:
+  selector:
+    matchLabels:
+      app: pipeline
+  template:
+    metadata:
+      labels:
+        app: pipeline
+    spec:
+      containers:
+      - name: pipeline
+        image: pipeline-image
+        ports:
+          - containerPort: 8080
