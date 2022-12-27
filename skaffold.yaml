@@ -2,6 +2,6 @@ apiVersion: skaffold/v3alpha1
 kind: Config
 manifests:
   rawYaml:
-  - k8s/*.yaml
+  - k8s/*
 deploy:
   kubectl: {}
