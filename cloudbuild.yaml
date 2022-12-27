@@ -7,7 +7,7 @@ steps:
   - '-c'
   - > 
     gcloud deploy releases create first_release \
-    --delivery-pipeline=pipeline \
+    --delivery-pipeline=hello-world-app \
     --region=southamerica-east1 \
     --source=./ \
     --images=pipeline-image='southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA'
