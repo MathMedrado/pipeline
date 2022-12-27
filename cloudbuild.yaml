@@ -1,0 +1,4 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA', '.']
+images: ['southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build:$SHORT_SHA']
