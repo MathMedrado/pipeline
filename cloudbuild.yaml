@@ -6,7 +6,7 @@ steps:
   args:
   - '-c'
   - > 
-    gcloud deploy releases create first_release \
+    gcloud deploy releases create release \
     --delivery-pipeline=hello-world-app \
     --region=southamerica-east1 \
     --source=./ \
