@@ -6,6 +6,9 @@ steps:
   args:
   - '-c'
   - |
+    gcloud components install gke-gcloud-auth-plugin
+    gke-gcloud-auth-plugin --version
+    export USE_GKE_GCLOUD_AUTH_PLUGIN=True
     gcloud container clusters get-credentials cluster-gke-hml --zone southamerica-east1-a --project vivae-hml-358520
     kubectl get pods
 - name: bash
