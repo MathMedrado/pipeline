@@ -10,7 +10,7 @@ steps:
     gke-gcloud-auth-plugin --version
     export USE_GKE_GCLOUD_AUTH_PLUGIN=True
     gcloud container clusters get-credentials cluster-gke-hml --zone southamerica-east1-a --project vivae-hml-358520
-    kubectl apply -f /k8s/*
+    kubectl apply -f ./k8s/*
 - name: bash
   script: |
     #!/usr/bin/env bash
