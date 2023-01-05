@@ -1,15 +1,15 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA', '.']
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: 'bash'
-  args:
-  - '-c'
-  - > 
-    gcloud deploy releases create release \
-    --delivery-pipeline=hello-world-app \
-    --region=southamerica-east1 \
-    --source=./ \
-    --images=pipeline-image='southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA'
-images: ['southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA']
+  args: ['build', '-t', 'southamerica-east1-docker.pkg.dev/vivae-mgt-358520/teste-cloud-build/pipeline:$SHORT_SHA', '.']
+# - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+#   entrypoint: 'bash'
+#   args:
+#   - '-c'
+#   - > 
+#     gcloud deploy releases create release \
+#     --delivery-pipeline=hello-world-app \
+#     --region=southamerica-east1 \
+#     --source=./ \
+#     --images=pipeline-image='southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA'
+# images: ['southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA']
 #gcloud deploy apply --file=clouddeploy.yaml --region=southamerica-east1 --project=matheusmedrado-estudos
