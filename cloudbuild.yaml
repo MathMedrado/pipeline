@@ -1,15 +1,18 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'southamerica-east1-docker.pkg.dev/vivae-mgt-358520/teste-cloud-build/pipeline:$SHORT_SHA', '.']
-# - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-#   entrypoint: 'bash'
-#   args:
-#   - '-c'
-#   - > 
-#     gcloud deploy releases create release \
-#     --delivery-pipeline=hello-world-app \
-#     --region=southamerica-east1 \
-#     --source=./ \
-#     --images=pipeline-image='southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - > 
+    gcloud container clusters get-credentials \
+    cluster-gke-hml --zone southamerica-east1-a \
+    --project vivae-hml-358520
+    kubectl get pods
+- name: bash
+  script: |
+    #!/usr/bin/env bash
+    rm -rf $HOME/.kube
 images: ['southamerica-east1-docker.pkg.dev/vivae-mgt-358520/teste-cloud-build/pipeline:$SHORT_SHA']
 #gcloud deploy apply --file=clouddeploy.yaml --region=southamerica-east1 --project=matheusmedrado-estudos
