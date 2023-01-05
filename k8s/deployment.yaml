@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
       - name: pipeline
-        image: southamerica-east1-docker.pkg.dev/vivae-mgt-358520/teste-cloud-build/pipeline:96c52c8
+        image: southamerica-east1-docker.pkg.dev/vivae-mgt-358520/teste-cloud-build/pipeline:779f839
         ports:
           - containerPort: 8080
