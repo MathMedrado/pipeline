@@ -11,5 +11,5 @@ steps:
 #     --region=southamerica-east1 \
 #     --source=./ \
 #     --images=pipeline-image='southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA'
-images: ['southamerica-east1-docker.pkg.dev/matheusmedrado-estudos/teste-cloud-build/pipeline:$SHORT_SHA']
+images: ['southamerica-east1-docker.pkg.dev/vivae-mgt-358520/teste-cloud-build/pipeline:$SHORT_SHA']
 #gcloud deploy apply --file=clouddeploy.yaml --region=southamerica-east1 --project=matheusmedrado-estudos
