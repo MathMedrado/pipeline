@@ -5,13 +5,9 @@ steps:
   entrypoint: 'bash'
   args:
   - '-c'
-  - > 
+  - |
+    gcloud components install kubectl
     gcloud container clusters get-credentials cluster-gke-hml --zone southamerica-east1-a --project vivae-hml-358520
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: 'bash'
-  args:
-  - '-c'
-  - > 
     kubectl get pods
 - name: bash
   script: |
